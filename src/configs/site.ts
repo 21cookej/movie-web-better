@@ -35,7 +35,7 @@ export const siteConfig = {
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/images/hero.jpg`,
   links: {
     twitter: `${env.NEXT_PUBLIC_TWITTER}`,
-    github: 'https://github.com/bitfreee/movie-web-kickstart',
+    github: 'https://github.com/21cookej/movie-web-better/tree/dev?tab=readme-ov-file',
     githubAccount: '',
   },
   socialLinks: [
