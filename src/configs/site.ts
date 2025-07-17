@@ -35,7 +35,7 @@ export const siteConfig = {
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/images/hero.jpg`,
   links: {
     twitter: `${env.NEXT_PUBLIC_TWITTER}`,
-    github: 'https://github.com/21cookej/movie-web-better/tree/dev?tab=readme-ov-file',
+    github: 'https://github.com/21cookej/21cookej.github.io',
     githubAccount: '',
   },
   socialLinks: [
