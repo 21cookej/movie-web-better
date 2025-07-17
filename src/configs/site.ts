@@ -38,28 +38,6 @@ export const siteConfig = {
     github: 'https://github.com/21cookej/21cookej.github.io',
     githubAccount: '',
   },
-  socialLinks: [
-    {
-      title: 'Facebook',
-      href: `${env.NEXT_PUBLIC_FACEBOOK}`,
-      icon: Icons.facebook,
-    },
-    {
-      title: 'Instagram',
-      href: `${env.NEXT_PUBLIC_INSTAGRAM}`,
-      icon: Icons.instagram,
-    },
-    {
-      title: 'Twitter',
-      href: `${env.NEXT_PUBLIC_TWITTER}`,
-      icon: Icons.twitter,
-    },
-    {
-      title: 'Youtube',
-      href: `${env.NEXT_PUBLIC_YOUTUBE}`,
-      icon: Icons.youtube,
-    },
-  ],
   footerItems: [
     { title: 'Audio Description', href: '/' },
     { title: 'Help Center', href: '/' },
