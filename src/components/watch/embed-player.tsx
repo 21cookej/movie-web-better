@@ -19,7 +19,6 @@ function EmbedPlayer(props: EmbedPlayerProps) {
   const [seasons, setSeasons] = React.useState<ISeason[] | null>(null);
 
   React.useEffect(() => {
-    // if anime type -> handle after fetch season and episode
     if (props.mediaType === MediaType.ANIME) {
       return;
     }
@@ -39,7 +38,6 @@ function EmbedPlayer(props: EmbedPlayerProps) {
     if (!props.movieId || props.mediaType !== MediaType.ANIME) {
       return;
     }
-
     void handleAnime(props.movieId);
   }, [props.movieId, props.mediaType]);
 
@@ -47,8 +45,8 @@ function EmbedPlayer(props: EmbedPlayerProps) {
   const iframeRef = React.useRef<HTMLIFrameElement>(null);
 
   const handleChangeEpisode = (episode: IEpisode): void => {
-    const { show_id: id, episode_number: eps } = episode;
-    handleSetIframeUrl(`https://vidsrc.cc/v2/embed/anime/tmdb${id}/${eps}/sub`);
+    const { show_id: id, season_number: season, episode_number: eps } = episode;
+    handleSetIframeUrl(`https://cinemaos.tech/player/${id}/${season}/${eps}`);
   };
 
   const handleAnime = async (movieId: string) => {
@@ -69,9 +67,7 @@ function EmbedPlayer(props: EmbedPlayerProps) {
     setSeasons(
       seasonWithEpisodes.map((res: AxiosResponse<ISeason>) => res.data),
     );
-    handleSetIframeUrl(
-      `https://vidsrc.cc/v2/embed/anime/tmdb${id}/1/sub?autoPlay=false`,
-    );
+    handleSetIframeUrl(`https://cinemaos.tech/player/${id}/1/1`);
   };
 
   const handleSetIframeUrl = (url: string): void => {
@@ -138,6 +134,7 @@ function EmbedPlayer(props: EmbedPlayerProps) {
         ref={iframeRef}
         style={{ opacity: 0 }}
         referrerPolicy="no-referrer-when-downgrade"
+        allow="encrypted-media"
       />
     </div>
   );
